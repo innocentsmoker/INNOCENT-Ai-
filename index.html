@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOCENT TECH AI Assistant</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        #chat-container { max-width: 800px; margin: 0 auto; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        #chat-box { height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+        .message { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .user { background: #e3f2fd; text-align: right; }
+        .ai { background: #f5f5f5; }
+        #input-container { display: flex; }
+        #user-input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        #send-btn { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; margin-left: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h2>🤖 INNOCENT TECH AI Assistant</h2>
+        <div id="chat-box">
+            <div class="message ai">Hello! I'm an AI assistant created by INNOCENT TECH. How can I help you today?</div>
+        </div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Type your question...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        
+        // Function to add messages to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.textContent = text;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
+        // Function to handle AI responses
+        function getAIResponse(userMessage) {
+            // Check if user asks about creator
+            if (userMessage.toLowerCase().includes('who created') || 
+                userMessage.toLowerCase().includes('who made') ||
+                userMessage.toLowerCase().includes('created by')) {
+                return "I was created by INNOCENT TECH!";
+            }
+            
+            // Basic responses (you can expand this)
+            const responses = [
+                "I'm an AI assistant created by INNOCENT TECH to help answer questions.",
+                "That's an interesting question! As an AI by INNOCENT TECH, I'm designed to assist with various queries.",
+                "I'm constantly learning and improving to better serve you.",
+                "INNOCENT TECH developed me to provide helpful and accurate information."
+            ];
+            
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+        
+        // Send button click event
+        sendBtn.addEventListener('click', () => {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // Simulate AI thinking
+                setTimeout(() => {
+                    const response = getAIResponse(message);
+                    addMessage(response, 'ai');
+                }, 500);
+            }
+        });
+        
+        // Enter key support
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
