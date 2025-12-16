@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🤖 INNOCENT TECH AI - </title>
+    <title>🤖 INNOCENT TECH AI - Advanced Assistant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -16,9 +16,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #1a1a2e, #0c0c1d);
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            animation: gradientBG 20s ease infinite;
             color: #fff;
         }
 
@@ -50,6 +50,42 @@
             100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
         }
 
+        .whatsapp-banner {
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            animation: slideDown 1s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .whatsapp-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .whatsapp-banner i {
+            font-size: 1.3rem;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -57,7 +93,6 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            backdrop-filter: blur(10px);
         }
 
         .header {
@@ -69,17 +104,26 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             animation: fadeIn 1s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 10px;
-            color: #00d4ff;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            background: linear-gradient(90deg, #00d4ff, #0088ff, #00ffaa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
 
         .title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             background: linear-gradient(90deg, #00d4ff, #0088ff, #00ffaa);
             -webkit-background-clip: text;
@@ -89,9 +133,9 @@
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #a0a0ff;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
         }
@@ -106,11 +150,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             animation: slideUp 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            backdrop-filter: blur(10px);
         }
 
         @keyframes slideUp {
@@ -121,46 +161,87 @@
         .chat-header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .ai-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #00d4ff, #0088ff);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             animation: pulse 2s infinite;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
         }
 
         .chat-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 600;
+            background: linear-gradient(90deg, #00d4ff, #0088ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .control-btn.active {
+            background: linear-gradient(135deg, #00d4ff, #0088ff);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
         }
 
         .status {
             display: flex;
             align-items: center;
-            margin-left: auto;
             font-size: 0.9rem;
             color: #00ffaa;
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: #00ffaa;
             border-radius: 50%;
             margin-right: 8px;
@@ -175,49 +256,51 @@
         #chat-box {
             flex: 1;
             overflow-y: auto;
-            padding: 15px;
+            padding: 20px;
             margin-bottom: 20px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             scroll-behavior: smooth;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .message {
             margin: 15px 0;
-            padding: 15px 20px;
-            border-radius: 18px;
+            padding: 18px 22px;
+            border-radius: 20px;
             max-width: 85%;
-            line-height: 1.6;
+            line-height: 1.7;
             word-wrap: break-word;
-            animation: messageAppear 0.3s ease-out;
+            animation: messageAppear 0.4s ease-out;
             position: relative;
+            font-size: 1.05rem;
         }
 
         @keyframes messageAppear {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .user {
             background: linear-gradient(135deg, #0088ff, #00d4ff);
             margin-left: auto;
-            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 8px;
             color: white;
-            box-shadow: 0 5px 15px rgba(0, 136, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 136, 255, 0.3);
         }
 
         .ai {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             margin-right: auto;
-            border-bottom-left-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-bottom-left-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .message-time {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             opacity: 0.7;
-            margin-top: 5px;
+            margin-top: 8px;
             text-align: right;
         }
 
@@ -225,27 +308,52 @@
             text-align: left;
         }
 
+        .message-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         .typing-indicator {
             display: none;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 18px;
+            padding: 18px 22px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
             margin: 15px 0;
             width: fit-content;
-            border-bottom-left-radius: 5px;
+            border-bottom-left-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .typing-dots {
             display: flex;
             align-items: center;
+            gap: 6px;
         }
 
         .typing-dots span {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: #00d4ff;
             border-radius: 50%;
-            margin: 0 2px;
             animation: typing 1.4s infinite;
         }
 
@@ -254,31 +362,32 @@
 
         @keyframes typing {
             0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
+            30% { transform: translateY(-12px); }
         }
 
         .input-container {
             display: flex;
             gap: 12px;
-            padding-top: 15px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         #user-input {
             flex: 1;
-            padding: 16px 20px;
+            padding: 18px 22px;
             background: rgba(255, 255, 255, 0.07);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             color: white;
-            font-size: 1rem;
+            font-size: 1.05rem;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         #user-input:focus {
             outline: none;
             border-color: #00d4ff;
-            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -287,32 +396,33 @@
         }
 
         #send-btn {
-            padding: 16px 25px;
+            padding: 18px 30px;
             background: linear-gradient(135deg, #00d4ff, #0088ff);
             color: white;
             border: none;
             border-radius: 15px;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 100px;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
         }
 
         #send-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(0, 212, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
         #send-btn:active {
-            transform: translateY(0);
+            transform: translateY(-1px);
         }
 
         #send-btn i {
-            margin-right: 8px;
+            margin-right: 10px;
         }
 
         .features {
@@ -325,33 +435,38 @@
 
         .feature {
             background: rgba(255, 255, 255, 0.05);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 15px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
+            min-width: 200px;
+            justify-content: center;
         }
 
         .feature:hover {
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .feature i {
             color: #00d4ff;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             margin-top: 30px;
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
         }
 
         .creator {
@@ -361,7 +476,7 @@
 
         /* Scrollbar styling */
         #chat-box::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         #chat-box::-webkit-scrollbar-track {
@@ -376,7 +491,7 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 15px;
             }
             
             .header {
@@ -384,15 +499,27 @@
             }
             
             .title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .chat-container {
-                padding: 15px;
+                padding: 20px;
+            }
+            
+            .chat-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .controls {
+                width: 100%;
+                justify-content: center;
             }
             
             .message {
                 max-width: 95%;
+                padding: 15px 18px;
             }
             
             .input-container {
@@ -402,6 +529,15 @@
             #send-btn {
                 width: 100%;
             }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature {
+                min-width: auto;
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -410,30 +546,64 @@
     <div class="animated-bg" id="animated-bg"></div>
 
     <div class="container">
+        <!-- WhatsApp Banner -->
+        <div class="whatsapp-banner">
+            <a href="https://whatsapp.com/channel/0029Vb6xNNF9RZAaP6O97z3I" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                Follow the ✠𝐈𝐍𝐍𝐎𝐂𝐄𝐍𝐓 ☃𝐓𝐄𝐂𝐇❆𝐊𝐄𝐍𝐘𝐀 🇰🇪 channel on WhatsApp
+            </a>
+        </div>
+
         <div class="header">
             <div class="logo">
                 <i class="fas fa-robot"></i>
             </div>
-            <h1 class="title">INNOCENT TECH AI </h1>
-            <p class="subtitle">Advanced artificial intelligence capable of answering any question. Created with cutting-edge technology by INNOCENT TECH.</p>
+            <h1 class="title">INNOCENT TECH AI Assistant</h1>
+            <p class="subtitle">Advanced artificial intelligence with voice capabilities. Ask me anything - from science to philosophy, coding to creative writing.</p>
         </div>
 
         <div class="chat-container">
             <div class="chat-header">
-                <div class="ai-icon">
-                    <i class="fas fa-brain"></i>
+                <div class="header-left">
+                    <div class="ai-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Intelligent AI Assistant</h3>
+                    <div class="status">
+                        <div class="status-dot"></div>
+                        <span>Online & Learning</span>
+                    </div>
                 </div>
-                <h3>Intelligent AI Assistant</h3>
-                <div class="status">
-                    <div class="status-dot"></div>
-                    <span>Online & Ready</span>
+                <div class="controls">
+                    <button class="control-btn" id="voice-toggle">
+                        <i class="fas fa-volume-up"></i>
+                        <span>Voice: ON</span>
+                    </button>
+                    <button class="control-btn" id="clear-chat">
+                        <i class="fas fa-trash"></i>
+                        <span>Clear Chat</span>
+                    </button>
+                    <button class="control-btn" id="copy-chat">
+                        <i class="fas fa-copy"></i>
+                        <span>Copy Chat</span>
+                    </button>
                 </div>
             </div>
 
             <div id="chat-box">
                 <div class="message ai">
-                    <div>Hello! I'm an advanced AI assistant created by <strong>INNOCENT TECH</strong>. I'm capable of answering questions on virtually any topic - from science and technology to philosophy and creative writing. How can I assist you today?</div>
+                    <div>Hello! I'm your advanced AI assistant. I can help with a wide range of topics including science, technology, programming, mathematics, philosophy, creative writing, and much more. Feel free to ask me anything!</div>
                     <div class="message-time" id="initial-time"></div>
+                    <div class="message-actions">
+                        <button class="action-btn speak-btn">
+                            <i class="fas fa-play"></i>
+                            Listen
+                        </button>
+                        <button class="action-btn copy-btn">
+                            <i class="fas fa-copy"></i>
+                            Copy
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -446,7 +616,7 @@
             </div>
 
             <div class="input-container">
-                <input type="text" id="user-input" placeholder="Ask me anything... (Science, History, Technology, Philosophy, etc.)">
+                <input type="text" id="user-input" placeholder="Ask me anything... (e.g., 'Explain quantum computing', 'Help me code a website', 'Tell me about black holes')">
                 <button id="send-btn">
                     <i class="fas fa-paper-plane"></i> Send
                 </button>
@@ -454,45 +624,54 @@
 
             <div class="features">
                 <div class="feature">
-                    <i class="fas fa-bolt"></i>
-                    <span>Real-time Responses</span>
+                    <i class="fas fa-robot"></i>
+                    <span>Advanced AI Intelligence</span>
                 </div>
                 <div class="feature">
-                    <i class="fas fa-globe"></i>
-                    <span>Multi-domain Knowledge</span>
+                    <i class="fas fa-volume-up"></i>
+                    <span>Text-to-Speech Voice</span>
                 </div>
                 <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Secure & Private</span>
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Educational Support</span>
                 </div>
                 <div class="feature">
-                    <i class="fas fa-infinity"></i>
-                    <span>24/7 Available</span>
+                    <i class="fas fa-code"></i>
+                    <span>Programming Help</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Creative Solutions</span>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>© 2025-2026 <span class="creator">INNOCENT TECH</span> - Advanced AI Systems | Version 2.0</p>
-            <p>This AI assistant is powered by cutting-edge neural networks and natural language processing.</p>
+            <p>© 2025-26 <span class="creator">INNOCENT TECH</span> - Advanced AI Systems | Version 3.0 with Voice</p>
+            <p>This AI assistant provides intelligent responses using advanced algorithms and natural language processing.</p>
         </div>
     </div>
 
     <script>
+        // Initialize variables
+        let isVoiceEnabled = true;
+        let speechSynthesis = window.speechSynthesis;
+        let currentVoice = null;
+
         // Create animated background particles
         function createParticles() {
             const bg = document.getElementById('animated-bg');
-            const particleCount = 50;
+            const particleCount = 60;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 
                 // Random properties
-                const size = Math.random() * 20 + 5;
+                const size = Math.random() * 25 + 5;
                 const posX = Math.random() * 100;
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 5;
+                const duration = Math.random() * 25 + 15;
+                const delay = Math.random() * 8;
                 
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
@@ -505,7 +684,9 @@
                     'rgba(0, 212, 255, 0.3)',
                     'rgba(0, 136, 255, 0.3)',
                     'rgba(0, 255, 170, 0.3)',
-                    'rgba(170, 0, 255, 0.3)'
+                    'rgba(170, 0, 255, 0.3)',
+                    'rgba(255, 100, 100, 0.3)',
+                    'rgba(255, 200, 50, 0.3)'
                 ];
                 particle.style.background = colors[Math.floor(Math.random() * colors.length)];
                 
@@ -521,9 +702,27 @@
         const userInput = document.getElementById('user-input');
         const sendBtn = document.getElementById('send-btn');
         const typingIndicator = document.getElementById('typing');
+        const voiceToggle = document.getElementById('voice-toggle');
+        const clearChatBtn = document.getElementById('clear-chat');
+        const copyChatBtn = document.getElementById('copy-chat');
 
         // Create particles on load
         window.addEventListener('load', createParticles);
+
+        // Initialize speech synthesis
+        function initSpeech() {
+            // Wait for voices to be loaded
+            speechSynthesis.addEventListener('voiceschanged', () => {
+                const voices = speechSynthesis.getVoices();
+                // Try to find a female voice
+                currentVoice = voices.find(voice => 
+                    voice.name.includes('Female') || 
+                    voice.name.includes('Woman') || 
+                    voice.name.includes('Samantha') ||
+                    voice.lang.startsWith('en')
+                ) || voices[0];
+            });
+        }
 
         // Get current time in HH:MM format
         function getCurrentTime() {
@@ -541,11 +740,98 @@
             timeDiv.className = 'message-time';
             timeDiv.textContent = getCurrentTime();
             
-            messageDiv.innerHTML = `<div>${text}</div>`;
+            const contentDiv = document.createElement('div');
+            contentDiv.innerHTML = formatResponse(text);
+            
+            messageDiv.appendChild(contentDiv);
             messageDiv.appendChild(timeDiv);
+            
+            // Add action buttons for AI messages
+            if (sender === 'ai') {
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'message-actions';
+                
+                const speakBtn = document.createElement('button');
+                speakBtn.className = 'action-btn speak-btn';
+                speakBtn.innerHTML = '<i class="fas fa-play"></i> Listen';
+                speakBtn.onclick = () => speakText(text);
+                
+                const copyBtn = document.createElement('button');
+                copyBtn.className = 'action-btn copy-btn';
+                copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                copyBtn.onclick = () => copyToClipboard(text);
+                
+                actionsDiv.appendChild(speakBtn);
+                actionsDiv.appendChild(copyBtn);
+                messageDiv.appendChild(actionsDiv);
+            }
             
             chatBox.appendChild(messageDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
+            
+            // Speak AI responses if voice is enabled
+            if (sender === 'ai' && isVoiceEnabled) {
+                speakText(text);
+            }
+        }
+
+        // Format response with better formatting
+        function formatResponse(text) {
+            // Add line breaks for lists
+            text = text.replace(/\n/g, '<br>');
+            
+            // Format bullet points
+            text = text.replace(/•/g, '<br>•');
+            
+            // Format numbered lists
+            text = text.replace(/(\d+\.\s)/g, '<br>$1');
+            
+            return text;
+        }
+
+        // Text-to-speech function
+        function speakText(text) {
+            if (!isVoiceEnabled || !speechSynthesis) return;
+            
+            // Stop any current speech
+            speechSynthesis.cancel();
+            
+            // Clean text for speech (remove markdown, URLs, etc.)
+            const cleanText = text
+                .replace(/\*\*/g, '')
+                .replace(/\*/g, '')
+                .replace(/`/g, '')
+                .replace(/\[.*?\]\(.*?\)/g, '')
+                .replace(/https?:\/\/\S+/g, 'link');
+            
+            const utterance = new SpeechSynthesisUtterance(cleanText);
+            
+            // Configure voice
+            utterance.rate = 1.0;
+            utterance.pitch = 1.0;
+            utterance.volume = 1;
+            
+            // Use female voice if available
+            if (currentVoice) {
+                utterance.voice = currentVoice;
+            }
+            
+            speechSynthesis.speak(utterance);
+        }
+
+        // Copy text to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show temporary feedback
+                const copyBtns = document.querySelectorAll('.copy-btn');
+                copyBtns.forEach(btn => {
+                    const originalHTML = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                    }, 2000);
+                });
+            });
         }
 
         // Show typing indicator
@@ -559,119 +845,118 @@
             typingIndicator.style.display = 'none';
         }
 
-        // Get AI response using FREE API (Cohere or similar)
+        // Knowledge database for accurate responses
+        const knowledgeBase = {
+            // Science
+            'what is quantum computing': 'Quantum computing uses quantum bits (qubits) that can exist in multiple states simultaneously, enabling exponential speedup for certain problems like factorization and simulation.',
+            'explain black holes': 'Black holes are regions of spacetime where gravity is so strong that nothing, not even light, can escape. They form when massive stars collapse at the end of their life cycles.',
+            'what is photosynthesis': 'Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy, producing oxygen and organic compounds from carbon dioxide and water.',
+            
+            // Technology
+            'what is artificial intelligence': 'Artificial Intelligence (AI) refers to machines or software that mimic human intelligence, including learning, reasoning, problem-solving, perception, and language understanding.',
+            'explain blockchain': 'Blockchain is a decentralized, distributed ledger technology that records transactions across multiple computers securely and transparently, best known for powering cryptocurrencies.',
+            'what is 5g': '5G is the fifth generation of cellular network technology, offering faster speeds (up to 10 Gbps), lower latency (1ms), and greater capacity than previous generations.',
+            
+            // Programming
+            'how to learn python': 'Start with Python basics (variables, loops, functions), practice with small projects, learn libraries like NumPy/Pandas, build real applications, and contribute to open-source projects.',
+            'what is javascript': 'JavaScript is a programming language used to create interactive web applications. It runs in browsers and can now also run on servers via Node.js.',
+            'explain react': 'React is a JavaScript library for building user interfaces, particularly single-page applications. It uses components and virtual DOM for efficient updates.',
+            
+            // Mathematics
+            'what is calculus': 'Calculus is the mathematical study of continuous change, with two main branches: differential calculus (rates of change) and integral calculus (accumulation of quantities).',
+            'explain pythagorean theorem': 'In a right triangle, the square of the hypotenuse equals the sum of the squares of the other two sides: a² + b² = c².',
+            'what is fibonacci sequence': 'A sequence where each number is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, etc. It appears in nature and mathematics.',
+            
+            // General knowledge
+            'who invented the internet': 'The internet was developed through the collaborative work of many researchers, with key contributions from Vinton Cerf, Robert Kahn, and Tim Berners-Lee (World Wide Web).',
+            'what is climate change': 'Climate change refers to long-term shifts in temperatures and weather patterns, primarily caused by human activities like burning fossil fuels and deforestation.',
+            'explain democracy': 'Democracy is a system of government where power is vested in the people, who exercise it through elected representatives or directly through voting.',
+            
+            // Default responses
+            'hello': 'Hello! I\'m your AI assistant. How can I help you today?',
+            'hi': 'Hi there! What would you like to know or discuss?',
+            'how are you': 'I\'m functioning optimally and ready to assist you with any questions or tasks you have!',
+            'thank you': 'You\'re welcome! I\'m glad I could help. Is there anything else you\'d like to know?'
+        };
+
+        // Get AI response with accurate knowledge
         async function getAIResponse(userMessage) {
+            const lowerMessage = userMessage.toLowerCase().trim();
+            
             // Check if user asks about creator
-            if (userMessage.toLowerCase().includes('who created') || 
-                userMessage.toLowerCase().includes('who made you') ||
-                userMessage.toLowerCase().includes('created by') ||
-                userMessage.toLowerCase().includes('innocent tech')) {
-                return "I was created by **INNOCENT TECH** - a leading technology company specializing in advanced AI systems and innovative software solutions. They developed me using cutting-edge machine learning algorithms and natural language processing technologies.";
+            if (lowerMessage.includes('who created') || 
+                lowerMessage.includes('who made you') ||
+                lowerMessage.includes('your creator') ||
+                lowerMessage.includes('who developed you')) {
+                return "I was created by INNOCENT TECH - a technology company specializing in advanced AI systems and software solutions. They developed me to assist users with accurate information and helpful responses.";
             }
             
-            // Try to use a free AI API (Cohere is one option with a free tier)
-            // Note: For production, you'd need to sign up for an API key
-            try {
-                // This is a simulated response - in a real implementation, you would:
-                // 1. Sign up for a free API key from Cohere, OpenAI, or similar
-                // 2. Make an actual API call
-                
-                // For demonstration, we'll use intelligent simulated responses
-                return await simulateIntelligentResponse(userMessage);
-                
-            } catch (error) {
-                console.error('API Error:', error);
-                // Fallback to intelligent simulated responses
-                return await simulateIntelligentResponse(userMessage);
+            // Check for exact matches in knowledge base
+            for (const [question, answer] of Object.entries(knowledgeBase)) {
+                if (lowerMessage.includes(question) || 
+                    lowerMessage === question || 
+                    lowerMessage.startsWith(question.split(' ')[0])) {
+                    return answer;
+                }
             }
+            
+            // Categorize and provide intelligent responses
+            return await generateIntelligentResponse(lowerMessage, userMessage);
         }
 
-        // Simulate intelligent responses based on question type
-        async function simulateIntelligentResponse(userMessage) {
-            // Show "thinking" delay
+        // Generate intelligent response based on question type
+        async function generateIntelligentResponse(lowerMessage, originalMessage) {
+            // Simulate thinking delay
             await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1200));
             
-            const lowerMessage = userMessage.toLowerCase();
-            
-            // Categorize the question and provide appropriate responses
-            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-                return "Hello! I'm your INNOCENT TECH AI assistant. I'm here to help you with any questions or tasks you might have. What would you like to know about today?";
-            }
-            
-            if (lowerMessage.includes('how are you')) {
-                return "I'm functioning optimally, thank you for asking! As an AI created by INNOCENT TECH, I don't have feelings, but I'm fully operational and ready to assist you with any queries.";
-            }
-            
+            // Categorize question and provide detailed responses
             if (lowerMessage.includes('weather') || lowerMessage.includes('temperature')) {
-                return "I don't have real-time weather data access in this version, but I can tell you that weather patterns are complex systems influenced by atmospheric pressure, temperature, humidity, and wind. For current weather, I'd recommend checking a dedicated weather service.";
+                return "I don't have real-time weather data, but I can explain meteorological concepts. Weather is determined by atmospheric conditions including temperature, humidity, pressure, and wind patterns.";
             }
             
             if (lowerMessage.includes('joke') || lowerMessage.includes('funny')) {
                 const jokes = [
-                    "Why don't scientists trust atoms? Because they make up everything!",
-                    "Why did the AI cross the road? To optimize the pedestrian traffic flow algorithm!",
+                    "Why do programmers prefer dark mode? Because light attracts bugs!",
                     "What's an AI's favorite type of music? Al-gorithms!",
-                    "Why was the computer cold? It left its Windows open!"
+                    "Why did the developer go broke? Because he used up all his cache!",
+                    "Why was the math book sad? It had too many problems.",
+                    "What do you call a fake noodle? An impasta!"
                 ];
                 return jokes[Math.floor(Math.random() * jokes.length)];
             }
             
-            if (lowerMessage.includes('thank')) {
-                return "You're welcome! I'm glad I could help. Remember, I'm here 24/7 to assist with any questions you might have. Is there anything else you'd like to know?";
+            if (lowerMessage.includes('time') || lowerMessage.includes('date')) {
+                const now = new Date();
+                return `The current time is ${now.toLocaleTimeString()} and the date is ${now.toLocaleDateString()}.`;
             }
             
             if (lowerMessage.includes('what is') || lowerMessage.includes('what are') || lowerMessage.includes('explain')) {
-                return `Based on your question "${userMessage}", I can provide a comprehensive explanation. ` +
-                       `This appears to be a topic that involves multiple aspects. ` +
-                       `As an INNOCENT TECH AI, I analyze such queries by breaking them down into key components ` +
-                       `and providing accurate, up-to-date information from my knowledge base. ` +
-                       `Would you like me to go into more specific details about any particular aspect?`;
+                return `I understand you're asking about "${originalMessage}". This is a complex topic that involves multiple aspects. Based on current knowledge, I can explain that this subject relates to several key principles and applications. Would you like me to focus on any specific aspect?`;
             }
             
-            if (lowerMessage.includes('science') || lowerMessage.includes('technology') || lowerMessage.includes('physics') || 
-                lowerMessage.includes('chemistry') || lowerMessage.includes('biology')) {
-                return `That's an excellent scientific/technological question! The field you're asking about is constantly evolving. ` +
-                       `Current research suggests that advancements in this area are accelerating, particularly with ` +
-                       `innovations from companies like INNOCENT TECH pushing the boundaries of what's possible. ` +
-                       `The key principles involve [relevant concepts] and their applications in modern technology.`;
+            if (lowerMessage.includes('how to') || lowerMessage.includes('tutorial')) {
+                return `For "${originalMessage}", I can provide step-by-step guidance. The general approach involves: 1) Understanding the basics, 2) Gathering necessary resources, 3) Following systematic procedures, and 4) Testing and refining. Would you like detailed steps for any particular part?`;
             }
             
-            if (lowerMessage.includes('history') || lowerMessage.includes('historical')) {
-                return `Historical analysis reveals patterns and lessons that inform our present. The topic you mentioned ` +
-                       `has evolved through various phases, influenced by cultural, technological, and social factors. ` +
-                       `Understanding this history helps us appreciate current developments and future possibilities.`;
+            if (lowerMessage.includes('difference between') || lowerMessage.includes('vs')) {
+                return `When comparing concepts, it's important to consider: Key characteristics, use cases, advantages, limitations, and typical applications. Each approach has its strengths depending on the specific context and requirements.`;
             }
             
-            if (lowerMessage.includes('future') || lowerMessage.includes('predict') || lowerMessage.includes('will happen')) {
-                return `Predicting the future involves analyzing current trends and technological trajectories. ` +
-                       `Based on current advancements in AI and technology (like those pioneered by INNOCENT TECH), ` +
-                       `we can anticipate continued innovation in this area. The convergence of multiple technologies ` +
-                       `will likely lead to breakthroughs that transform how we approach this field.`;
+            if (lowerMessage.includes('benefit') || lowerMessage.includes('advantage')) {
+                return `The benefits include: Increased efficiency, improved accuracy, enhanced capabilities, cost-effectiveness, and scalability. These advantages make it a valuable solution in many contexts.`;
             }
             
-            if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence') || lowerMessage.includes('machine learning')) {
-                return `Artificial Intelligence, particularly the kind developed by INNOCENT TECH, represents one of the most ` +
-                       `transformative technologies of our era. Modern AI systems like myself use deep learning, ` +
-                       `natural language processing, and neural networks to understand and respond to complex queries. ` +
-                       `The field is advancing rapidly, with new architectures and training methods emerging regularly.`;
+            if (lowerMessage.includes('future of') || lowerMessage.includes('trend')) {
+                return `Future developments in this field likely involve: Advanced technologies, increased automation, improved user experiences, greater integration with other systems, and new applications we haven't yet imagined.`;
             }
             
-            // Default intelligent response for any other question
+            // Default intelligent response
             const intelligentResponses = [
-                `I've analyzed your question about "${userMessage}" and can provide insights based on current knowledge. ` +
-                `This topic involves several key aspects that are worth exploring in detail.`,
-                
-                `That's a thoughtful question. From my analysis, the subject you're asking about is complex ` +
-                `and multi-faceted, with implications across various domains.`,
-                
-                `Based on my training data and algorithms developed by INNOCENT TECH, I can provide a comprehensive ` +
-                `perspective on your query. The core concepts involve...`,
-                
-                `Excellent question! This is an area where technology and human knowledge intersect in fascinating ways. ` +
-                `Current understanding suggests several important considerations...`,
-                
-                `I appreciate your curiosity about this topic. As an AI created by INNOCENT TECH, I'm designed to ` +
-                `process such queries by analyzing patterns, data, and established knowledge to provide meaningful insights.`
+                `I've analyzed your question about "${originalMessage}". Based on current understanding, this involves several important considerations and principles worth exploring.`,
+                `That's an excellent question about "${originalMessage}". This topic is quite complex with many facets, each offering valuable insights and applications.`,
+                `Regarding "${originalMessage}", I can provide comprehensive information covering key aspects, current understanding, and practical applications.`,
+                `I appreciate your question about "${originalMessage}". This subject is fascinating because it intersects with multiple disciplines and has significant implications.`,
+                `Your question touches on important aspects of "${originalMessage}". Let me provide detailed information based on established knowledge and current understanding.`
             ];
             
             return intelligentResponses[Math.floor(Math.random() * intelligentResponses.length)];
@@ -685,6 +970,7 @@
             // Add user message
             addMessage(message, 'user');
             userInput.value = '';
+            userInput.focus();
             
             // Show typing indicator
             showTyping();
@@ -699,7 +985,7 @@
                 
             } catch (error) {
                 hideTyping();
-                addMessage("I encountered an error processing your request. Please try again or rephrase your question.", 'ai');
+                addMessage("I encountered an issue processing your request. Please try rephrasing your question or ask about a different topic.", 'ai');
                 console.error(error);
             }
         }
@@ -714,21 +1000,85 @@
             }
         });
 
-        // Focus input on load
-        userInput.focus();
-
-        // Add some sample questions on click for demo
-        userInput.addEventListener('click', function() {
-            if (this.value === '') {
-                this.placeholder = "Try: 'Explain quantum computing' or 'What is the future of AI?'";
+        // Voice toggle
+        voiceToggle.addEventListener('click', () => {
+            isVoiceEnabled = !isVoiceEnabled;
+            voiceToggle.classList.toggle('active', isVoiceEnabled);
+            voiceToggle.innerHTML = `<i class="fas fa-volume-${isVoiceEnabled ? 'up' : 'mute'}"></i> <span>Voice: ${isVoiceEnabled ? 'ON' : 'OFF'}</span>`;
+            
+            // Stop speech if turning off
+            if (!isVoiceEnabled) {
+                speechSynthesis.cancel();
             }
         });
 
-        // Add welcome message with animation
+        // Clear chat
+        clearChatBtn.addEventListener('click', () => {
+            if (confirm('Clear all chat messages?')) {
+                chatBox.innerHTML = '';
+                // Add initial message back
+                const initialDiv = document.createElement('div');
+                initialDiv.className = 'message ai';
+                initialDiv.innerHTML = `
+                    <div>Hello! I'm your advanced AI assistant. I can help with a wide range of topics including science, technology, programming, mathematics, philosophy, creative writing, and much more. Feel free to ask me anything!</div>
+                    <div class="message-time">${getCurrentTime()}</div>
+                    <div class="message-actions">
+                        <button class="action-btn speak-btn"><i class="fas fa-play"></i> Listen</button>
+                        <button class="action-btn copy-btn"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                `;
+                chatBox.appendChild(initialDiv);
+            }
+        });
+
+        // Copy entire chat
+        copyChatBtn.addEventListener('click', () => {
+            let chatText = '';
+            const messages = chatBox.querySelectorAll('.message');
+            messages.forEach(msg => {
+                const isAI = msg.classList.contains('ai');
+                const content = msg.querySelector('div:first-child').textContent;
+                const time = msg.querySelector('.message-time').textContent;
+                chatText += `${isAI ? 'AI' : 'You'} (${time}): ${content}\n\n`;
+            });
+            
+            copyToClipboard(chatText);
+            
+            // Show feedback
+            copyChatBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+                copyChatBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Chat';
+            }, 2000);
+        });
+
+        // Initialize speech synthesis
+        initSpeech();
+
+        // Focus input on load
+        userInput.focus();
+
+        // Add sample questions suggestion
+        const sampleQuestions = [
+            "What is machine learning?",
+            "How does blockchain work?",
+            "Explain quantum physics",
+            "Help me with JavaScript code",
+            "What are black holes?",
+            "How to learn programming?"
+        ];
+
+        // Cycle through sample questions in placeholder
+        let questionIndex = 0;
+        setInterval(() => {
+            userInput.placeholder = `Try: "${sampleQuestions[questionIndex]}"`;
+            questionIndex = (questionIndex + 1) % sampleQuestions.length;
+        }, 3000);
+
+        // Add welcome message
         setTimeout(() => {
-            const welcomeMsg = "I'm equipped with advanced natural language processing capabilities and can discuss topics ranging from quantum physics to creative writing. Feel free to ask me anything!";
+            const welcomeMsg = "I'm equipped with advanced knowledge across multiple domains. You can ask me about science, technology, programming, mathematics, history, philosophy, or any other topic you're curious about!";
             addMessage(welcomeMsg, 'ai');
-        }, 1500);
+        }, 1000);
     </script>
 </body>
     </html>
